@@ -26,8 +26,7 @@ function content(){ ?>
         $query2 = " SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$pass' ";
         $result = mysqli_query($GLOBALS['connection'], $query2);
         $arr = mysqli_fetch_assoc($result);
-        echo $pass;
-
+        
         if($arr != null){
 
           $token['uid'] = $arr['id'];
@@ -41,7 +40,7 @@ function content(){ ?>
  
           $_SESSION['token'] = $jwt;
 
-          header('location: Gradeshandle.php');
+          header('location: Control.php');
           
         }
         else{

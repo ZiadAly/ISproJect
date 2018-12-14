@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2018 at 07:12 PM
+-- Generation Time: Dec 14, 2018 at 08:48 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -31,15 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `grades` (
   `id` int(11) NOT NULL,
   `course` varchar(50) COLLATE utf8_bin NOT NULL,
-  `grade` varchar(50) COLLATE utf8_bin NOT NULL
+  `grade` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `grades`
---
-
-INSERT INTO `grades` (`id`, `course`, `grade`) VALUES
-(1, 'DB1', 'C');
 
 -- --------------------------------------------------------
 
@@ -67,7 +60,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
 (9, 'sdfdfs', 'dfsdfdf', '$2y$10$7mBVA5c5aRAv032amyhAYuokZz2k4.4TX2MmbKpHkZYx1ahVefCx2', 'Student'),
 (10, 'zeyad', 'zero', '$2y$10$HiszVKtslqroJYLRFS6r4eVHUy8bjaJK667KIlep4pMXp5kEXuqRa', 'DR'),
 (11, 'ss', 'ss', '$2y$10$ZL1cNxcYnpI4ywoR7jz0k.UdGv9pDndIjLPh5jW7KdK.so55Nf/4.', 'DR'),
-(12, 'xx', 'xx', '9336ebf25087d91c818ee6e9ec29f8c1', 'DR');
+(12, 'xx', 'xx', '9336ebf25087d91c818ee6e9ec29f8c1', 'DR'),
+(13, 'cc', 'cc', 'e0323a9039add2978bf5b49550572c7c', 'Student');
 
 --
 -- Indexes for dumped tables
@@ -77,7 +71,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
 -- Indexes for table `grades`
 --
 ALTER TABLE `grades`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`,`course`);
 
 --
 -- Indexes for table `users`
@@ -93,7 +87,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

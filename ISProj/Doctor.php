@@ -10,9 +10,9 @@ function content(){
     $decoded_tok = (array) $decoded;
     $id = $decoded_tok['uid'];
     $role = $decoded_tok['role'];
-     
-    //just for testing; dont forget to remove it
-    var_dump($decoded_tok);
+
+//just for testing; dont forget to remove it
+var_dump($decoded_tok);
 
     }
     catch(Exception $e){
