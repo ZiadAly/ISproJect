@@ -22,9 +22,13 @@ function content(){
 <?php 
 if ($role == 'Student' || $role == 'TA'||$role == 'DR' ){ 
     echo "<h4> Welcome " .$role .", Click below to enter your page.</h4> ";?>
-    <button type='button' onclick="goto1()"> click me ya Student </button>
-    <button type='button' onclick="goto2()"> click me ya TA </button> 
-    <button type='button' onclick="goto3()"> click me ya Doctor </button>
+    <button type='button' onclick="goto1()" <?php if($role != 'Student') {?> disabled="disabled" <?php }?> > click me ya Student </button>
+    <button type='button' onclick="goto2()" <?php if($role != 'TA') {?> disabled="disabled" <?php }?> > click me ya TA </button> 
+    <button type='button' onclick="goto3()" <?php if($role != 'DR') {?> disabled="disabled" <?php }?> > click me ya Doctor </button>
+
+
+
+
 <?php }
 else{
     echo 'invalid user';
@@ -33,7 +37,7 @@ else{
 <script>
 function goto1(){
     window.location.replace("Student.php");
-
+    
 }
 
 function goto2(){
