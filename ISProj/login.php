@@ -31,6 +31,7 @@ function content(){ ?>
         if($arr != null){
 
           $token['uid'] = $arr['id'];
+          $token['role'] = $arr['role'];
           try{
             $jwt = JWT::encode($token, $GLOBALS['key']);
           }
