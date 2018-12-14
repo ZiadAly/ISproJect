@@ -17,7 +17,7 @@
 
     $connection = mysqli_connect("localhost","root","","ISproJect");
     mysqli_query($connection, "INSERT INTO `grades`(`ID`, `Name`, `Grade`) VALUES ('$id','$Name','$grades')");
-    $result = mysqli_query($connection, "SELECT * FROM `grades`");
+    $GLOBALS['result'] = mysqli_query($connection, "SELECT * FROM `grades`");
    // mysqli_query($connection, "UPDATE `grades` SET `Grade`='$grades' WHERE `ID` = '$id'")
 ?>
 <!DOCTYPE html>
@@ -47,7 +47,7 @@ th {
     <th>Grades</th>
     <tbody>
          <?php
-         while($row = mysqli_fetch_array($result)){
+         while($row = mysqli_fetch_array($GLOBALS['result'])){
          ?>
              <tr>
                  <td><?php echo $row['ID']; ?></td>
