@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2018 at 08:48 PM
+-- Generation Time: Dec 15, 2018 at 12:46 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -34,6 +34,14 @@ CREATE TABLE `grades` (
   `grade` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `grades`
+--
+
+INSERT INTO `grades` (`id`, `course`, `grade`) VALUES
+(1, 'IS', 'A+'),
+(2, 'DB', 'D');
+
 -- --------------------------------------------------------
 
 --
@@ -53,7 +61,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
-(1, 'mohamed saeed', 'mo', '1', 'TA'),
+(1, 'mohamed saeed', 'mo', '1', 'Student'),
 (2, 'sdf', '', '$2y$10$5319xPoRxaqjvddf6UdwXuJKVSP4dnVwhT4f.Yghk7sz8YUcsR2jC', ''),
 (3, 'zezi', 'smsms', '$2y$10$2L28TSQ.D1sPUhFgABBgouIvyYdEziniLIjCwTEKL2tNArZzbWqW6', 'TA'),
 (8, 'kiko', 'sdfdsf', '$2y$10$MYWzGeA.7o91k4OgwgOQ4OGv5HzAsm9IxfzbpQj1Q/8aam8I6bx.S', ''),
@@ -61,7 +69,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
 (10, 'zeyad', 'zero', '$2y$10$HiszVKtslqroJYLRFS6r4eVHUy8bjaJK667KIlep4pMXp5kEXuqRa', 'DR'),
 (11, 'ss', 'ss', '$2y$10$ZL1cNxcYnpI4ywoR7jz0k.UdGv9pDndIjLPh5jW7KdK.so55Nf/4.', 'DR'),
 (12, 'xx', 'xx', '9336ebf25087d91c818ee6e9ec29f8c1', 'DR'),
-(13, 'cc', 'cc', 'e0323a9039add2978bf5b49550572c7c', 'Student');
+(13, 'cc', 'cc', 'e0323a9039add2978bf5b49550572c7c', 'TA');
 
 --
 -- Indexes for dumped tables
