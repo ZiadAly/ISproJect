@@ -2,10 +2,11 @@
 include 'template.php';
 
 function content(){
+
+try{
 $t = $_SESSION['token'];
 $k = $GLOBALS['key'];
 $result ="";
-try{
 $decoded =  JWT::decode($t, $k, array('HS256'));
 $decoded_tok = (array) $decoded;
 $id = $decoded_tok['uid'];
