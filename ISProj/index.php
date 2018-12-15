@@ -1,3 +1,9 @@
+<?php include 'header.php'; 
+
+?>
+
+<h1>Welcome</h1>
+
 <button type='button' onclick="goto1()"> Login </button>
 <button type='button' onclick="goto2()"> Sign up </button>
 

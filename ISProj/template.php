@@ -19,7 +19,7 @@ $token = array(
 //db conn
 $connection = mysqli_connect("localhost","root","","ISproj");
 
-//header here
+include 'header.php';
 
 
 echo content();
