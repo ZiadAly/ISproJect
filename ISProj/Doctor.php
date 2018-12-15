@@ -51,24 +51,35 @@ th {
 }
 </style>
 
-<script type="text/javascript">
-function edit(){
-  window.location.replace("index.php");
-}
-
-</script>
-
-<form method='POST' action="" >
+<form method='POST' action="Doctor.php" >
 
 ID: <input type='number' name='Id' size='20'>
 Grade: <input type='text' name='Grade' size='20'>
 
-<input type='submit' name='Submit' value='Submit'>
+<input type='submit' name='Edit' value='Edit'>
 
 <?php
     $grades =$_POST['Grade'];
     $id = $_POST['Id'];
     mysqli_query($GLOBALS['connection'], "UPDATE `grades` SET `grade`= '$grades'  WHERE `id`= '$id' ");
+
+?>
+</form>
+
+<form method='POST' action="Doctor.php" >
+
+ID: <input type='number' name='Id' size='20'>
+Course: <input type='text' name='Course' size='20'>
+Grade: <input type='text' name='Grade' size='20'>
+
+<input type='submit' name='Add' value='Add'>
+
+<?php
+    $id = $_POST['Id'];
+    $Course =$_POST['Course'];
+    $grades =$_POST['Grade'];
+ 
+    mysqli_query($GLOBALS['connection'], "INSERT INTO `grades`(`id`, `course`, `grade`) VALUES ('','$Course','$grades')");
 
 ?>
 </form>
