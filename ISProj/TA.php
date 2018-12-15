@@ -60,4 +60,5 @@ table {
 },
 th {
   height: 50px;
+    
 }
