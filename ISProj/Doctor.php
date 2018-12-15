@@ -18,17 +18,44 @@ catch(Exception $e){
        echo "<h1> Access Denied</h1>";
     }
 else{
-    $qq = "SELECT * FROM users INNER JOIN grades ON users.id=grades.id WHERE role = 'Student' ";
+    $q = "SELECT * FROM users WHERE role = 'Student' ";
+    $qq = "SELECT * FROM users JOIN grades ON users.id=grades.id WHERE role = 'Student' ";
     $result = mysqli_query($GLOBALS['connection'], $qq);   
+    $result2 = mysqli_query($GLOBALS['connection'], $q);
   ?>
   <h5>Doctor's Page</h5>
   
   <br>
+
+  <h3>Users</h3>
   <table>
   <tr>
-    <th>Id</th>
+    <th>ID</th>
+    <th>Name</th>
+
+    <tbody>
+         <?php
+        if($result){
+         while($row = mysqli_fetch_array($result2)){
+         ?>
+             <tr>
+                 <td><?php echo $row['id']; ?></td>
+                 <td><?php echo $row['name']; ?></td>
+
+            <?php echo "<tr>";
+          }
+        }
+               ?>
+          </tbody>
+</table>
+
+  <h3>Grades</h3>
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
     <th>Course</th>
-    <th>Grades</th>
+    <th>Grade</th>
     <tbody>
          <?php
         if($result){
@@ -36,6 +63,7 @@ else{
          ?>
              <tr>
                  <td><?php echo $row['id']; ?></td>
+                 <td><?php echo $row['name']; ?></td>
                  <td><?php echo $row['course']; ?></td>
                  <td><?php echo $row['grade']; ?></td>
             <?php echo "<tr>";
@@ -99,7 +127,7 @@ if(isset($_POST['garde']) && isset($_POST['id'])){
  </form>
  
  <?php 
- if(isset($_POST['Grade']) && isset($_POST['ID']) && isset($_POST['Course'])){
+ if(isset($_POST['Grade']) && isset($_POST['Id']) && isset($_POST['Course'])){
     $id2 = $_POST['Id'];
     $Course2 =$_POST['Course'];
     $grades2 =$_POST['Grade'];

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2018 at 01:39 PM
+-- Generation Time: Dec 14, 2018 at 08:48 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -34,15 +34,6 @@ CREATE TABLE `grades` (
   `grade` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Dumping data for table `grades`
---
-
-INSERT INTO `grades` (`id`, `course`, `grade`) VALUES
-(18, 'DB', 'A'),
-(20, 'CS3', 'B'),
-(21, 'PS', 'E');
-
 -- --------------------------------------------------------
 
 --
@@ -62,11 +53,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
-(17, 'dd', 'dd', '1aabac6d068eef6a7bad3fdf50a05cc8', 'DR'),
-(18, 'ss', 'ss', '3691308f2a4c2f6983f2880d32e29c84', 'Student'),
-(19, 'tt', 'tt', 'accc9105df5383111407fd5b41255e23', 'TA'),
-(20, 'ff', 'ff', '633de4b0c14ca52ea2432a3c8a5c4c31', 'Student'),
-(21, 'gg', 'gg', '73c18c59a39b18382081ec00bb456d43', 'Student');
+(1, 'mohamed saeed', 'mo', '1', 'TA'),
+(2, 'sdf', '', '$2y$10$5319xPoRxaqjvddf6UdwXuJKVSP4dnVwhT4f.Yghk7sz8YUcsR2jC', ''),
+(3, 'zezi', 'smsms', '$2y$10$2L28TSQ.D1sPUhFgABBgouIvyYdEziniLIjCwTEKL2tNArZzbWqW6', 'TA'),
+(8, 'kiko', 'sdfdsf', '$2y$10$MYWzGeA.7o91k4OgwgOQ4OGv5HzAsm9IxfzbpQj1Q/8aam8I6bx.S', ''),
+(9, 'sdfdfs', 'dfsdfdf', '$2y$10$7mBVA5c5aRAv032amyhAYuokZz2k4.4TX2MmbKpHkZYx1ahVefCx2', 'Student'),
+(10, 'zeyad', 'zero', '$2y$10$HiszVKtslqroJYLRFS6r4eVHUy8bjaJK667KIlep4pMXp5kEXuqRa', 'DR'),
+(11, 'ss', 'ss', '$2y$10$ZL1cNxcYnpI4ywoR7jz0k.UdGv9pDndIjLPh5jW7KdK.so55Nf/4.', 'DR'),
+(12, 'xx', 'xx', '9336ebf25087d91c818ee6e9ec29f8c1', 'DR'),
+(13, 'cc', 'cc', 'e0323a9039add2978bf5b49550572c7c', 'Student');
 
 --
 -- Indexes for dumped tables
@@ -92,7 +87,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
@@ -102,7 +97,7 @@ ALTER TABLE `users`
 -- Constraints for table `grades`
 --
 ALTER TABLE `grades`
-  ADD CONSTRAINT `foreign_key` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `foreign_key` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

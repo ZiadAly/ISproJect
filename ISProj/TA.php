@@ -11,9 +11,9 @@ function content(){
     $decoded_tok = (array) $decoded;
     $id = $decoded_tok['uid'];
     $role = $decoded_tok['role'];
+    $q = "SELECT * FROM users JOIN grades ON users.id=grades.id WHERE role = 'Student' ";
 
-
-   $result = mysqli_query($GLOBALS['connection'], " SELECT * FROM `grades`");
+   $result = mysqli_query($GLOBALS['connection'], $q);
         }
     catch(Exception $e){
         echo 'Caught exception: ',  $e->getMessage(), "\n";
@@ -23,9 +23,12 @@ function content(){
     }
     else{
   ?>
+  <h4> TA's page</h4>
+  <h3> Student Grades</h3>
   <table>
   <tr>
-    <th>Id</th>
+    <th>ID</th>
+    <th>Name</th>
     <th>Course</th>
     <th>Grades</th>
     <tbody>
@@ -34,6 +37,7 @@ function content(){
          ?>
              <tr>
                  <td><?php echo $row['id']; ?></td>
+                 <td><?php echo $row['name']; ?></td>
                  <td><?php echo $row['course']; ?></td>
                  <td><?php echo $row['grade']; ?></td>
             <?php echo "<tr>";
